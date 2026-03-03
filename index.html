@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cristiele Ribeiro Advocacia | Defesa de Aposentados e Pensionistas</title>
+  <meta name="description" content="Escritório especializado na defesa de aposentados e pensionistas contra abusos em empréstimos e cartões de crédito consignado. Consulta gratuita via WhatsApp.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#fdf8ed',
+              100: '#f9edcc',
+              200: '#f3d994',
+              300: '#ecc25c',
+              400: '#e6ad36',
+              500: '#c9922a',
+              600: '#a57220',
+              700: '#83551c',
+              800: '#6d451e',
+              900: '#5c3a1e',
+            },
+            navy: {
+              50: '#f0f3f7',
+              100: '#d9e0eb',
+              200: '#b3c1d6',
+              300: '#8499b8',
+              400: '#5d7499',
+              500: '#3d5478',
+              600: '#2e4060',
+              700: '#1f2d44',
+              800: '#172236',
+              900: '#111a2a',
+              950: '#0b1018',
+            }
+          },
+          fontFamily: {
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'body': ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+
+    .font-display { font-family: 'Playfair Display', Georgia, serif; }
+
+    /* WhatsApp floating button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+    }
+    .whatsapp-float i { color: white; font-size: 28px; }
+
+    /* Pulse animation */
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    /* Hero gradient overlay */
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(17,26,42,0.92) 0%, rgba(31,45,68,0.85) 50%, rgba(17,26,42,0.75) 100%);
+    }
+
+    /* Gold accent line */
+    .gold-line {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #c9922a, #e6ad36);
+    }
+
+    /* Card hover effect */
+    .service-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    /* Step connector line */
+    .step-connector {
+      position: absolute;
+      top: 32px;
+      left: calc(50% + 32px);
+      width: calc(100% - 64px);
+      height: 2px;
+      background: linear-gradient(90deg, #c9922a, #e6ad36);
+    }
+
+    /* FAQ accordion */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.active .faq-answer { max-height: 300px; }
+    .faq-item.active .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform 0.3s; }
+
+    /* Navbar scroll effect */
+    .navbar-scrolled {
+      background: rgba(17, 26, 42, 0.98) !important;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Logo SVG animation */
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 2px solid #c9922a;
+      border-radius: 4px;
+      position: relative;
+    }
+    .logo-mark span {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #c9922a;
+      line-height: 1;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-navy-800">
+
+  <!-- ======================== -->
+  <!-- NAVBAR -->
+  <!-- ======================== -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="logo-mark">
+            <span>CR</span>
+          </div>
+          <div class="hidden sm:block">
+            <div class="font-display text-white text-lg font-semibold leading-tight">Cristiele Ribeiro</div>
+            <div class="text-gold-400 text-[10px] tracking-[0.25em] uppercase font-medium">Advocacia</div>
+          </div>
+        </a>
+
+        <!-- Nav Links (desktop) -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#servicos" class="text-white/80 hover:text-gold-400 text-sm font-medium transition-colors">Servi&ccedil;os</a>
+          <a href="#como-funciona" class="text-white/80 hover:text-gold-400 text-sm font-medium transition-colors">Como Funciona</a>
+          <a href="#sobre" class="text-white/80 hover:text-gold-400 text-sm font-medium transition-colors">Sobre</a>
+          <a href="#faq" class="text-white/80 hover:text-gold-400 text-sm font-medium transition-colors">D&uacute;vidas</a>
+          <a href="https://wa.me/5534991283244?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20consulta%20sobre%20meu%20caso."
+             target="_blank"
+             class="bg-gold-500 hover:bg-gold-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all hover:shadow-lg">
+            <i class="fab fa-whatsapp mr-2"></i>Fale Comigo
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-900/98 border-t border-navy-700">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#servicos" class="block text-white/80 hover:text-gold-400 py-2 text-sm font-medium">Servi&ccedil;os</a>
+        <a href="#como-funciona" class="block text-white/80 hover:text-gold-400 py-2 text-sm font-medium">Como Funciona</a>
+        <a href="#sobre" class="block text-white/80 hover:text-gold-400 py-2 text-sm font-medium">Sobre</a>
+        <a href="#faq" class="block text-white/80 hover:text-gold-400 py-2 text-sm font-medium">D&uacute;vidas</a>
+        <a href="https://wa.me/5534991283244?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20consulta%20sobre%20meu%20caso."
+           target="_blank"
+           class="block bg-gold-500 text-white text-center px-6 py-3 rounded-lg text-sm font-semibold mt-2">
+          <i class="fab fa-whatsapp mr-2"></i>Fale Comigo
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================== -->
+  <!-- HERO SECTION -->
+  <!-- ======================== -->
+  <section class="relative min-h-screen flex items-center bg-navy-950">
+    <!-- Background with overlay -->
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <!-- Decorative law elements in hero background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <!-- Large scale of justice watermark -->
+      <svg class="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-[0.03]" viewBox="0 0 200 200" fill="none" stroke="#c9922a" stroke-width="1">
+        <line x1="100" y1="20" x2="100" y2="180"/>
+        <line x1="30" y1="55" x2="170" y2="55"/>
+        <circle cx="100" cy="18" r="10"/>
+        <path d="M30,55 L5,125 Q30,150 55,125 Z"/>
+        <path d="M170,55 L145,125 Q170,150 195,125 Z"/>
+        <rect x="80" y="172" width="40" height="10" rx="3"/>
+        <rect x="60" y="180" width="80" height="8" rx="4"/>
+      </svg>
+      <!-- Section symbol -->
+      <svg class="absolute left-10 bottom-20 w-32 h-32 opacity-[0.03]" viewBox="0 0 100 100" fill="#c9922a">
+        <text x="10" y="80" font-family="serif" font-size="90" font-weight="bold">&sect;</text>
+      </svg>
+      <!-- Geometric lines -->
+      <div class="absolute top-20 left-1/4 w-px h-40 bg-gradient-to-b from-transparent via-gold-500/10 to-transparent"></div>
+      <div class="absolute bottom-20 right-1/3 w-px h-32 bg-gradient-to-b from-transparent via-gold-500/10 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Text Content -->
+        <div data-aos="fade-right" data-aos-duration="800">
+          <div class="inline-flex items-center gap-2 bg-gold-500/10 border border-gold-500/30 rounded-full px-4 py-1.5 mb-6">
+            <div class="w-2 h-2 bg-gold-400 rounded-full"></div>
+            <span class="text-gold-300 text-xs font-semibold tracking-wide uppercase">Advocacia Especializada</span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight mb-6">
+            Defesa de<br>
+            <span class="text-gold-400">Aposentados</span> e<br>
+            <span class="text-gold-400">Pensionistas</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-navy-200 leading-relaxed mb-8 max-w-lg">
+            Seu banco descontou um empr&eacute;stimo ou cart&atilde;o consignado que voc&ecirc; <strong class="text-white">n&atilde;o reconhece?</strong>
+            Eu posso ajudar a recuperar o que &eacute; seu por direito.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me/5534991283244?text=Ol%C3%A1%2C%20sou%20aposentado(a)%20e%20preciso%20de%20ajuda%20com%20um%20empr%C3%A9stimo%20consignado."
+               target="_blank"
+               class="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:shadow-xl hover:shadow-gold-500/20">
+              <i class="fab fa-whatsapp text-xl"></i>
+              Consulta Gratuita
+            </a>
+            <a href="#servicos"
+               class="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-gold-400/50 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all hover:bg-white/5">
+              Saiba Mais
+              <i class="fas fa-arrow-down text-sm"></i>
+            </a>
+          </div>
+
+          <!-- Trust indicators -->
+          <div class="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/10">
+            <div class="flex items-center gap-2">
+              <i class="fas fa-shield-halved text-gold-400"></i>
+              <span class="text-white/70 text-sm">Sigilo Total</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-video text-gold-400"></i>
+              <span class="text-white/70 text-sm">Atendimento Online</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-hand-holding-dollar text-gold-400"></i>
+              <span class="text-white/70 text-sm">Consulta Gratuita</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo with Law-themed background -->
+        <div class="hidden lg:block" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+          <div class="relative">
+            <!-- Law-themed decorative background -->
+            <div class="absolute -inset-8 -z-10">
+              <!-- Balanca da Justica SVG -->
+              <svg class="absolute top-0 right-0 w-48 h-48 opacity-[0.07]" viewBox="0 0 200 200" fill="none" stroke="#c9922a" stroke-width="1.5">
+                <line x1="100" y1="20" x2="100" y2="180"/>
+                <line x1="40" y1="60" x2="160" y2="60"/>
+                <circle cx="100" cy="20" r="8"/>
+                <path d="M40,60 L20,120 Q40,140 60,120 Z"/>
+                <path d="M160,60 L140,120 Q160,140 180,120 Z"/>
+                <rect x="85" y="170" width="30" height="10" rx="2"/>
+                <rect x="70" y="178" width="60" height="6" rx="3"/>
+              </svg>
+              <!-- Martelo SVG -->
+              <svg class="absolute bottom-10 left-0 w-32 h-32 opacity-[0.06]" viewBox="0 0 100 100" fill="none" stroke="#c9922a" stroke-width="1.5">
+                <rect x="35" y="10" width="30" height="18" rx="3" transform="rotate(-30 50 19)"/>
+                <line x1="50" y1="28" x2="35" y2="85"/>
+                <ellipse cx="35" cy="88" rx="15" ry="5"/>
+              </svg>
+              <!-- Paragrafo / Lei SVG -->
+              <svg class="absolute top-1/2 right-4 w-24 h-24 opacity-[0.05]" viewBox="0 0 100 100" fill="#c9922a">
+                <text x="10" y="75" font-family="serif" font-size="80" font-weight="bold">&sect;</text>
+              </svg>
+              <!-- Decorative circles -->
+              <div class="absolute top-8 left-8 w-40 h-40 border border-gold-500/10 rounded-full"></div>
+              <div class="absolute bottom-8 right-8 w-56 h-56 border border-gold-500/10 rounded-full"></div>
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 border border-gold-500/5 rounded-full"></div>
+            </div>
+
+            <!-- Gold gradient frame -->
+            <div class="absolute -inset-4 bg-gradient-to-br from-gold-500/20 via-gold-400/10 to-navy-600/20 rounded-2xl"></div>
+            <!-- Subtle gold corner accents -->
+            <div class="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-gold-500/40 rounded-tl-lg"></div>
+            <div class="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-gold-500/40 rounded-br-lg"></div>
+
+            <img src="img/foto-hero.jpeg"
+                 alt="Dra. Cristiele Ribeiro - Advogada Especialista"
+                 class="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto object-cover"
+                 style="aspect-ratio: 3/4;">
+
+            <!-- Floating badge -->
+            <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg px-5 py-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-balance-scale text-gold-600"></i>
+                </div>
+                <div>
+                  <div class="text-navy-800 font-bold text-sm">OAB Ativa</div>
+                  <div class="text-navy-500 text-xs">Escrit&oacute;rio Digital</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating badge right -->
+            <div class="absolute -top-3 -right-3 bg-gold-500 rounded-lg shadow-lg px-4 py-2">
+              <div class="flex items-center gap-2">
+                <i class="fas fa-shield-halved text-white text-sm"></i>
+                <span class="text-white text-xs font-bold">Especialista</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <i class="fas fa-chevron-down text-gold-400/50 text-xl"></i>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- PROBLEMS SECTION -->
+  <!-- ======================== -->
+  <section class="py-20 relative overflow-hidden">
+    <!-- Law library background with overlay -->
+    <div class="absolute inset-0">
+      <img src="img/law-books.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+      <div class="absolute inset-0 bg-gradient-to-b from-white/[0.95] via-navy-50/[0.92] to-white/[0.95]"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14" data-aos="fade-up">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mb-4">
+          Isso est&aacute; acontecendo com voc&ecirc;?
+        </h2>
+        <div class="gold-line mx-auto mb-4"></div>
+        <p class="text-navy-600 text-lg max-w-2xl mx-auto">
+          Milhares de aposentados e pensionistas s&atilde;o v&iacute;timas de pr&aacute;ticas abusivas todos os dias. Reconhece alguma dessas situa&ccedil;&otilde;es?
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white border border-red-100 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="0">
+          <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-credit-card text-red-500 text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-lg mb-2">Cart&atilde;o consignado que voc&ecirc; n&atilde;o pediu</h3>
+          <p class="text-navy-600 text-sm leading-relaxed">Descobriu um cart&atilde;o de cr&eacute;dito consignado descontando do seu benef&iacute;cio sem sua autoriza&ccedil;&atilde;o.</p>
+        </div>
+
+        <div class="bg-white border border-red-100 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-file-invoice-dollar text-red-500 text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-lg mb-2">Empr&eacute;stimo que n&atilde;o reconhece</h3>
+          <p class="text-navy-600 text-sm leading-relaxed">Parcelas sendo descontadas do seu INSS por um empr&eacute;stimo que voc&ecirc; nunca contratou.</p>
+        </div>
+
+        <div class="bg-white border border-red-100 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-percent text-red-500 text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-lg mb-2">Juros abusivos no consignado</h3>
+          <p class="text-navy-600 text-sm leading-relaxed">Taxas de juros acima do permitido por lei, fazendo voc&ecirc; pagar muito mais do que deveria.</p>
+        </div>
+
+        <div class="bg-white border border-red-100 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-phone-slash text-red-500 text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-lg mb-2">Cobran&ccedil;as insistentes</h3>
+          <p class="text-navy-600 text-sm leading-relaxed">Liga&ccedil;&otilde;es constantes de cobran&ccedil;a por d&iacute;vidas que n&atilde;o s&atilde;o suas ou j&aacute; foram pagas.</p>
+        </div>
+
+        <div class="bg-white border border-red-100 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="400">
+          <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-money-bill-transfer text-red-500 text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-lg mb-2">Margem consign&aacute;vel ultrapassada</h3>
+          <p class="text-navy-600 text-sm leading-relaxed">Mais de 35% do seu benef&iacute;cio comprometido com descontos de empr&eacute;stimos.</p>
+        </div>
+
+        <div class="bg-white border border-red-100 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="500">
+          <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-signature text-red-500 text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-lg mb-2">Assinatura falsificada</h3>
+          <p class="text-navy-600 text-sm leading-relaxed">Contratos com assinatura que n&atilde;o &eacute; sua ou biometria que voc&ecirc; nunca fez.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10" data-aos="fade-up">
+        <a href="https://wa.me/5534991283244?text=Ol%C3%A1%2C%20estou%20tendo%20problemas%20com%20desconto%20no%20meu%20benef%C3%ADcio%20e%20preciso%20de%20ajuda."
+           target="_blank"
+           class="inline-flex items-center gap-2 bg-navy-800 hover:bg-navy-900 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:shadow-lg">
+          <i class="fab fa-whatsapp text-xl"></i>
+          Estou passando por isso, preciso de ajuda
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- SERVICES SECTION -->
+  <!-- ======================== -->
+  <section id="servicos" class="py-20 relative overflow-hidden">
+    <!-- Law-themed subtle background -->
+    <div class="absolute inset-0">
+      <img src="img/law-books.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+      <div class="absolute inset-0 bg-white/[0.96]"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14" data-aos="fade-up">
+        <span class="text-gold-600 text-sm font-semibold tracking-wide uppercase">Como posso ajudar</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-4">
+          Servi&ccedil;os Especializados
+        </h2>
+        <div class="gold-line mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Service 1 -->
+        <div class="service-card bg-gradient-to-br from-navy-50 to-white border border-navy-100 rounded-2xl p-8" data-aos="fade-up">
+          <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center mb-5">
+            <i class="fas fa-ban text-gold-600 text-2xl"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-navy-900 mb-3">Cancelamento de Empr&eacute;stimo Consignado</h3>
+          <p class="text-navy-600 leading-relaxed mb-4">
+            Se voc&ecirc; foi v&iacute;tima de empr&eacute;stimo consignado n&atilde;o autorizado, entramos com a&ccedil;&atilde;o judicial para cancelar o contrato e devolver os valores descontados indevidamente.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Cancelamento do contrato fraudulento
+            </li>
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Devolu&ccedil;&atilde;o dos valores em dobro
+            </li>
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Indeniza&ccedil;&atilde;o por danos morais
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card bg-gradient-to-br from-navy-50 to-white border border-navy-100 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center mb-5">
+            <i class="fas fa-credit-card text-gold-600 text-2xl"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-navy-900 mb-3">Cart&atilde;o de Cr&eacute;dito Consignado Indevido</h3>
+          <p class="text-navy-600 leading-relaxed mb-4">
+            Cart&atilde;o consignado que voc&ecirc; n&atilde;o solicitou? Atuamos para cancelar o cart&atilde;o, cessar os descontos e buscar repara&ccedil;&atilde;o pelos preju&iacute;zos causados.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Cancelamento imediato do cart&atilde;o
+            </li>
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Cessa&ccedil;&atilde;o dos descontos no benef&iacute;cio
+            </li>
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Repara&ccedil;&atilde;o integral dos danos
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card bg-gradient-to-br from-navy-50 to-white border border-navy-100 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center mb-5">
+            <i class="fas fa-scale-unbalanced text-gold-600 text-2xl"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-navy-900 mb-3">Revis&atilde;o de Juros Abusivos</h3>
+          <p class="text-navy-600 leading-relaxed mb-4">
+            Juros acima do teto legal? Fazemos a revis&atilde;o do contrato para adequar &agrave;s taxas permitidas e recuperar o que foi cobrado a mais.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>An&aacute;lise completa do contrato
+            </li>
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Recalculo com taxas legais
+            </li>
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Restitui&ccedil;&atilde;o dos valores excedentes
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card bg-gradient-to-br from-navy-50 to-white border border-navy-100 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center mb-5">
+            <i class="fas fa-gavel text-gold-600 text-2xl"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-navy-900 mb-3">Indeniza&ccedil;&atilde;o por Danos Morais</h3>
+          <p class="text-navy-600 leading-relaxed mb-4">
+            Al&eacute;m da devolu&ccedil;&atilde;o dos valores, voc&ecirc; tem direito a ser indenizado pelo transtorno e constrangimento causados pelas pr&aacute;ticas abusivas.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>A&ccedil;&atilde;o de danos morais
+            </li>
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Negativado indevidamente? Temos solu&ccedil;&atilde;o
+            </li>
+            <li class="flex items-start gap-2 text-sm text-navy-600">
+              <i class="fas fa-check text-gold-500 mt-1"></i>Compensa&ccedil;&atilde;o financeira justa
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- HOW IT WORKS -->
+  <!-- ======================== -->
+  <section id="como-funciona" class="py-20 bg-navy-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-gold-400 text-sm font-semibold tracking-wide uppercase">Simples e R&aacute;pido</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
+          Como Funciona?
+        </h2>
+        <div class="gold-line mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 relative">
+        <!-- Step 1 -->
+        <div class="text-center relative" data-aos="fade-up">
+          <div class="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+            <span class="font-display text-white text-2xl font-bold">1</span>
+          </div>
+          <!-- Connector (desktop only) -->
+          <div class="hidden md:block step-connector"></div>
+          <div class="bg-navy-800 rounded-xl p-6">
+            <div class="w-12 h-12 bg-navy-700 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <i class="fab fa-whatsapp text-gold-400 text-2xl"></i>
+            </div>
+            <h3 class="font-display text-xl font-semibold text-white mb-3">Entre em Contato</h3>
+            <p class="text-navy-300 text-sm leading-relaxed">
+              Me chame no WhatsApp e conte sua situa&ccedil;&atilde;o. A primeira consulta &eacute; <strong class="text-gold-400">100% gratuita</strong> e sem compromisso.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center relative" data-aos="fade-up" data-aos-delay="150">
+          <div class="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+            <span class="font-display text-white text-2xl font-bold">2</span>
+          </div>
+          <div class="hidden md:block step-connector"></div>
+          <div class="bg-navy-800 rounded-xl p-6">
+            <div class="w-12 h-12 bg-navy-700 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-magnifying-glass text-gold-400 text-2xl"></i>
+            </div>
+            <h3 class="font-display text-xl font-semibold text-white mb-3">An&aacute;lise do Caso</h3>
+            <p class="text-navy-300 text-sm leading-relaxed">
+              Analiso seus documentos e extratos para identificar todas as irregularidades e calcular seus direitos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+            <span class="font-display text-white text-2xl font-bold">3</span>
+          </div>
+          <div class="bg-navy-800 rounded-xl p-6">
+            <div class="w-12 h-12 bg-navy-700 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-scale-balanced text-gold-400 text-2xl"></i>
+            </div>
+            <h3 class="font-display text-xl font-semibold text-white mb-3">A&ccedil;&atilde;o Judicial</h3>
+            <p class="text-navy-300 text-sm leading-relaxed">
+              Entro com a a&ccedil;&atilde;o para cancelar contratos, devolver valores e buscar indeniza&ccedil;&atilde;o. <strong class="text-gold-400">Voc&ecirc; acompanha tudo online.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12" data-aos="fade-up">
+        <a href="https://wa.me/5534991283244?text=Ol%C3%A1%20Dra.%20Cristiele%2C%20gostaria%20de%20analisar%20meu%20caso."
+           target="_blank"
+           class="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:shadow-xl hover:shadow-gold-500/20">
+          <i class="fab fa-whatsapp text-xl"></i>
+          Quero Analisar Meu Caso Gratuitamente
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- ABOUT / SOBRE -->
+  <!-- ======================== -->
+  <section id="sobre" class="py-20 relative overflow-hidden">
+    <!-- Law library subtle background -->
+    <div class="absolute inset-0">
+      <img src="img/law-books.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+      <div class="absolute inset-0 bg-gradient-to-br from-white/[0.94] via-white/[0.96] to-navy-50/[0.93]"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Lady Justice Photo -->
+        <div data-aos="fade-right">
+          <div class="relative">
+            <div class="absolute -inset-6 bg-gradient-to-br from-gold-100 to-navy-50 rounded-2xl -z-10"></div>
+            <!-- Gold corner accents -->
+            <div class="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-gold-500/50 rounded-tl-xl z-10"></div>
+            <div class="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-gold-500/50 rounded-br-xl z-10"></div>
+            <img src="img/lady-justice.jpg"
+                 alt="Est&aacute;tua da Justi&ccedil;a - S&iacute;mbolo do Direito"
+                 class="rounded-2xl shadow-xl w-full max-w-md mx-auto object-cover"
+                 style="aspect-ratio: 3/4; object-position: center top;">
+            <!-- Overlay caption -->
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-900/80 to-transparent rounded-b-2xl p-6 pt-16">
+              <div class="font-display text-xl font-bold text-white">Justi&ccedil;a &amp; Direito</div>
+              <p class="text-gold-300 text-sm mt-1">Comprometida com a defesa dos seus direitos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div data-aos="fade-left">
+          <span class="text-gold-600 text-sm font-semibold tracking-wide uppercase">Quem Sou Eu</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-2">
+            Dra. Cristiele da Silva Ribeiro
+          </h2>
+          <div class="gold-line mb-6"></div>
+
+          <div class="space-y-4 text-navy-600 leading-relaxed text-lg">
+            <p>
+              Sou advogada com atua&ccedil;&atilde;o <strong class="text-navy-800">100% digital</strong>, especializada na
+              <strong class="text-navy-800">defesa de aposentados e pensionistas</strong> que foram v&iacute;timas de empr&eacute;stimos
+              e cart&otilde;es consignados abusivos ou n&atilde;o autorizados.
+            </p>
+            <p>
+              Acredito que ningu&eacute;m deve ser prejudicado por pr&aacute;ticas ilegais de bancos e financeiras.
+              Cada cliente que atendo recebe aten&ccedil;&atilde;o <strong class="text-navy-800">pessoal e dedicada</strong>,
+              porque sei que por tr&aacute;s de cada processo existe uma pessoa que merece respeito e justi&ccedil;a.
+            </p>
+            <p>
+              Meu escrit&oacute;rio &eacute; digital, o que significa que voc&ecirc; pode ser atendido(a)
+              <strong class="text-navy-800">de qualquer lugar do Brasil</strong>, com conforto e praticidade,
+              sem precisar sair de casa.
+            </p>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-navy-100">
+            <div>
+              <div class="font-display text-3xl font-bold text-gold-600">100%</div>
+              <div class="text-navy-500 text-sm mt-1">Digital</div>
+            </div>
+            <div>
+              <div class="font-display text-3xl font-bold text-gold-600">Todo</div>
+              <div class="text-navy-500 text-sm mt-1">Brasil</div>
+            </div>
+            <div>
+              <div class="font-display text-3xl font-bold text-gold-600">Gratis</div>
+              <div class="text-navy-500 text-sm mt-1">1&ordf; Consulta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- SOCIAL PROOF / NUMBERS -->
+  <!-- ======================== -->
+  <section class="py-16 bg-gold-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div data-aos="zoom-in">
+          <i class="fas fa-users text-white/80 text-3xl mb-3"></i>
+          <div class="font-display text-3xl font-bold text-white">Dezenas</div>
+          <div class="text-white/80 text-sm mt-1">de clientes atendidos</div>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="100">
+          <i class="fas fa-map-marker-alt text-white/80 text-3xl mb-3"></i>
+          <div class="font-display text-3xl font-bold text-white">Nacional</div>
+          <div class="text-white/80 text-sm mt-1">Atendimento em todo Brasil</div>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-laptop text-white/80 text-3xl mb-3"></i>
+          <div class="font-display text-3xl font-bold text-white">100%</div>
+          <div class="text-white/80 text-sm mt-1">Online e seguro</div>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="300">
+          <i class="fas fa-heart text-white/80 text-3xl mb-3"></i>
+          <div class="font-display text-3xl font-bold text-white">Humano</div>
+          <div class="text-white/80 text-sm mt-1">Atendimento personalizado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- FAQ -->
+  <!-- ======================== -->
+  <section id="faq" class="py-20 relative overflow-hidden">
+    <!-- Law library subtle background -->
+    <div class="absolute inset-0">
+      <img src="img/law-books.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+      <div class="absolute inset-0 bg-navy-50/[0.94]"></div>
+    </div>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14" data-aos="fade-up">
+        <span class="text-gold-600 text-sm font-semibold tracking-wide uppercase">Tire Suas D&uacute;vidas</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-4">
+          Perguntas Frequentes
+        </h2>
+        <div class="gold-line mx-auto"></div>
+      </div>
+
+      <div class="space-y-4" data-aos="fade-up">
+        <!-- FAQ 1 -->
+        <div class="faq-item bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-navy-800 text-lg pr-4">Como sei se meu empr&eacute;stimo consignado &eacute; irregular?</span>
+            <i class="fas fa-chevron-down faq-chevron text-gold-500 flex-shrink-0"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-6 text-navy-600 leading-relaxed">
+              Se voc&ecirc; n&atilde;o reconhece o empr&eacute;stimo, n&atilde;o assinou contrato, recebeu o dinheiro sem solicitar, ou percebeu descontos inesperados no seu benef&iacute;cio, h&aacute; grandes chances de irregularidade. Envie seus extratos pelo WhatsApp que fa&ccedil;o uma an&aacute;lise gratuita.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-navy-800 text-lg pr-4">Atende s&oacute; na minha cidade ou em todo o Brasil?</span>
+            <i class="fas fa-chevron-down faq-chevron text-gold-500 flex-shrink-0"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-6 text-navy-600 leading-relaxed">
+              Atendo em <strong>todo o Brasil</strong>! Meu escrit&oacute;rio &eacute; 100% digital. Voc&ecirc; pode ser atendido(a) de qualquer cidade, sem precisar sair de casa. Toda a comunica&ccedil;&atilde;o &eacute; feita por WhatsApp e videoconfer&ecirc;ncia.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-navy-800 text-lg pr-4">Quanto custa para entrar com a a&ccedil;&atilde;o?</span>
+            <i class="fas fa-chevron-down faq-chevron text-gold-500 flex-shrink-0"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-6 text-navy-600 leading-relaxed">
+              A consulta inicial &eacute; <strong>gratuita</strong>. Ap&oacute;s a an&aacute;lise do caso, apresento as op&ccedil;&otilde;es de honor&aacute;rios de forma transparente. Em muitos casos, trabalho com honor&aacute;rios vinculados ao &ecirc;xito, ou seja, voc&ecirc; s&oacute; paga se ganhar.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-navy-800 text-lg pr-4">Quanto tempo demora o processo?</span>
+            <i class="fas fa-chevron-down faq-chevron text-gold-500 flex-shrink-0"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-6 text-navy-600 leading-relaxed">
+              Cada caso &eacute; &uacute;nico, mas em geral processos contra bancos por consignado irregular podem levar de 6 meses a 2 anos. Em muitos casos, conseguimos decis&otilde;es liminares (urgentes) para <strong>suspender os descontos rapidamente</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="font-semibold text-navy-800 text-lg pr-4">Quais documentos preciso enviar?</span>
+            <i class="fas fa-chevron-down faq-chevron text-gold-500 flex-shrink-0"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="px-6 pb-6 text-navy-600 leading-relaxed">
+              Basicamente: <strong>RG, CPF, extrato do benef&iacute;cio INSS</strong> (dispon&iacute;vel no Meu INSS) e qualquer contrato ou correspond&ecirc;ncia do banco. N&atilde;o se preocupe, eu te ajudo a conseguir tudo pelo WhatsApp.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- FINAL CTA -->
+  <!-- ======================== -->
+  <section class="py-20 bg-navy-900 relative overflow-hidden">
+    <!-- Decorative -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-gold-500/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+      <div class="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="fas fa-shield-halved text-gold-400 text-2xl"></i>
+      </div>
+
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+        N&atilde;o fique calado(a). <br>Seus direitos t&ecirc;m <span class="text-gold-400">defesa</span>.
+      </h2>
+
+      <p class="text-navy-300 text-lg mb-8 max-w-xl mx-auto">
+        Se voc&ecirc; &eacute; aposentado(a) ou pensionista e est&aacute; sofrendo com descontos indevidos,
+        fale comigo agora. A consulta &eacute; gratuita e eu vou lutar pelos seus direitos.
+      </p>
+
+      <a href="https://wa.me/5534991283244?text=Ol%C3%A1%20Dra.%20Cristiele%2C%20sou%20aposentado(a)%20e%20preciso%20de%20ajuda%20urgente."
+         target="_blank"
+         class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-xl text-xl font-bold transition-all hover:shadow-xl hover:shadow-green-500/30 hover:scale-105">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        Falar com a Dra. Cristiele Agora
+      </a>
+
+      <p class="text-navy-500 text-sm mt-4">
+        <i class="fas fa-clock mr-1"></i>Respondo em at&eacute; 2 horas &uacute;teis
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================== -->
+  <!-- FOOTER -->
+  <!-- ======================== -->
+  <footer class="bg-navy-950 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Logo & Description -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="logo-mark">
+              <span>CR</span>
+            </div>
+            <div>
+              <div class="font-display text-white text-lg font-semibold">Cristiele Ribeiro</div>
+              <div class="text-gold-400 text-[10px] tracking-[0.25em] uppercase">Advocacia</div>
+            </div>
+          </div>
+          <p class="text-navy-400 text-sm leading-relaxed">
+            Escrit&oacute;rio digital especializado na defesa de aposentados e pensionistas contra abusos em empr&eacute;stimos e cart&otilde;es consignados.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Links R&aacute;pidos</h4>
+          <ul class="space-y-2">
+            <li><a href="#servicos" class="text-navy-400 hover:text-gold-400 text-sm transition-colors">Servi&ccedil;os</a></li>
+            <li><a href="#como-funciona" class="text-navy-400 hover:text-gold-400 text-sm transition-colors">Como Funciona</a></li>
+            <li><a href="#sobre" class="text-navy-400 hover:text-gold-400 text-sm transition-colors">Sobre</a></li>
+            <li><a href="#faq" class="text-navy-400 hover:text-gold-400 text-sm transition-colors">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Contato</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="https://wa.me/5534991283244" target="_blank" class="flex items-center gap-2 text-navy-400 hover:text-gold-400 text-sm transition-colors">
+                <i class="fab fa-whatsapp text-lg"></i>(34) 9128-3244
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@cristianeribeiro.adv.br" class="flex items-center gap-2 text-navy-400 hover:text-gold-400 text-sm transition-colors">
+                <i class="fas fa-envelope text-lg"></i>contato@cristianeribeiro.adv.br
+              </a>
+            </li>
+            <li>
+              <span class="flex items-center gap-2 text-navy-400 text-sm">
+                <i class="fas fa-map-pin text-lg"></i>Atendimento 100% Digital — Todo Brasil
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-navy-800 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-navy-500 text-xs">
+          &copy; 2026 Cristiele Ribeiro Advocacia. Todos os direitos reservados.
+        </p>
+        <p class="text-navy-600 text-xs">
+          Este site n&atilde;o constitui publicidade. As informa&ccedil;&otilde;es aqui contidas s&atilde;o de car&aacute;ter informativo.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== -->
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <!-- ======================== -->
+  <a href="https://wa.me/5534991283244?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20uma%20consulta."
+     target="_blank"
+     class="whatsapp-float"
+     aria-label="Fale conosco pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 600 });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileMenuBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+        // Open clicked (if it wasn't active)
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    // Smooth scroll offset for fixed navbar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 80;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
