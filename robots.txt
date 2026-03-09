@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cristieleribeiro.adv.br/sitemap.xml
